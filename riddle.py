@@ -3,8 +3,8 @@ from __future__ import print_function
 import random as _random
 
 def run():
-
     """ game start """
+
     print("*****************************************")
     print("*********** Bem vindo ao jogo! **********")
     print("*****************************************")
@@ -70,4 +70,5 @@ def restart(decision):
     else:
         print("fim da execução")
 
-run()
+if __name__ == '__main__':
+    run()
