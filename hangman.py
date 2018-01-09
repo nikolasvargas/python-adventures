@@ -20,12 +20,15 @@ def run():
 
     die = False
     win = False
-    attemps = 6
+    attemps = 7
     wrongs = 0
+    letters_typed = []
 
     while(not win and not die):
 
         letter = input("Digite uma letra: ").upper().strip()
+        letters_typed.append(letter)
+
         index = 0
 
         if letter in secret_word:
@@ -43,7 +46,10 @@ def run():
         if wrongs == attemps:
             die = True
         else:
+            handman_die(wrongs)
             print("você ainda tem {} tentativas".format(attemps - wrongs), end='\n')
+            print("letras já inseridas:")
+            print(" ".join(tuple(letters_typed)), end='\n')
 
         if "".join(tuple(letter_spacing)) == secret_word.upper():
             win = True
@@ -51,13 +57,80 @@ def run():
             print(" ".join(tuple(letter_spacing)), end='\n')
 
         if win:
-            print("you win!!", end='\n')
+            playground.win_print()
             print("quantidade de erros: {}".format(wrongs), end='\n')
         elif die:
-            print("você atingiu o número máximo de erros permitidos", end='\n')
-            print("fim de jogo", end='\n')
+            lose_print()
 
+def lose_print():
+    print("você atingiu o número máximo de erros permitidos", end='\n')
+    print("fim de jogo", end='\n')
+    print("    _______________         ")
+    print("   /               \       ")
+    print("  /                 \      ")
+    print("//                   \/\  ")
+    print("\|   XXXX     XXXX   | /   ")
+    print(" |   XXXX     XXXX   |/     ")
+    print(" |   XXX       XXX   |      ")
+    print(" |                   |      ")
+    print(" \__      XXX      __/     ")
+    print("   |\     XXX     /|       ")
+    print("   | |           | |        ")
+    print("   | I I I I I I I |        ")
+    print("   |  I I I I I I  |        ")
+    print("   \_             _/       ")
+    print("     \_         _/         ")
+    print("       \_______/           ")
 
+def handman_die(wrongs):
+    print("  _______     ")
+    print(" |/      |    ")
+
+    if(wrongs == 1):
+        print(" |      (_)   ")
+        print(" |            ")
+        print(" |            ")
+        print(" |            ")
+
+    if(wrongs == 2):
+        print(" |      (_)   ")
+        print(" |      \     ")
+        print(" |            ")
+        print(" |            ")
+
+    if(wrongs == 3):
+        print(" |      (_)   ")
+        print(" |      \|    ")
+        print(" |            ")
+        print(" |            ")
+
+    if(wrongs == 4):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |            ")
+        print(" |            ")
+
+    if(wrongs == 5):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |            ")
+
+    if(wrongs == 6):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      /     ")
+
+    if (wrongs == 7):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      / \   ")
+
+    print(" |            ")
+    print("_|___         ")
+    print()
 
 if __name__ == '__main__':
     run()

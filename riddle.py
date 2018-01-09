@@ -43,6 +43,7 @@ def run():
 
         if find:
             print("bingo! você acertou!! o número é {}".format(random_number), end='\n')
+            playground.win_print()
             print("sua pontuação final é: {}".format(points), end='\n')
             restart(int(input("jogar novamente?: sim(1) nao(0): ")))
             break

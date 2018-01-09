@@ -27,5 +27,18 @@ def welcome():
     print("*********** Bem vindo ao jogo! **********")
     print("*****************************************")
 
+def win_print():
+    print("Winner!")
+    print("       ___________      ")
+    print("      '._==_==_=_.'     ")
+    print("      .-\\:      /-.    ")
+    print("     | (|:.     |) |    ")
+    print("      '-|:.     |-'     ")
+    print("        \\::.    /      ")
+    print("         '::. .'        ")
+    print("           ) (          ")
+    print("         _.' '._        ")
+    print("        '-------'       ")
+
 if __name__ == '__main__':
     main()
