@@ -1,11 +1,10 @@
 """ another game """
 import random as _random
+import playground
 def run():
     """ run the game """
 
-    print("*****************************************")
-    print("*********** Bem vindo ao jogo! **********")
-    print("*****************************************")
+    playground.welcome()
 
     external_word_list = []
 
@@ -39,21 +38,25 @@ def run():
 
         else:
             wrongs += 1
-            print("{} erros de {}".format(wrongs, attemps), end='\n')
+            print("{} jogada de {}".format(wrongs, attemps), end='\n')
 
         if wrongs == attemps:
-            print("você atingiu o número máximo de erros permitidos", end='\n')
-            print("fim de jogo", end='\n')
-            break
+            die = True
         else:
             print("você ainda tem {} tentativas".format(attemps - wrongs), end='\n')
 
         if "".join(tuple(letter_spacing)) == secret_word.upper():
-            print("you win!!", end='\n')
-            print("quantidade de erros: {}".format(wrongs), end='\n')
-            break
+            win = True
         else:
             print(" ".join(tuple(letter_spacing)), end='\n')
+
+        if win:
+            print("you win!!", end='\n')
+            print("quantidade de erros: {}".format(wrongs), end='\n')
+        elif die:
+            print("você atingiu o número máximo de erros permitidos", end='\n')
+            print("fim de jogo", end='\n')
+
 
 
 if __name__ == '__main__':

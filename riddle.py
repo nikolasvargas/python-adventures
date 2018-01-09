@@ -1,12 +1,11 @@
 """ jogo simplório """
 import random as _random
+import playground
 
 def run():
     """ game start """
 
-    print("*****************************************")
-    print("*********** Bem vindo ao jogo! **********")
-    print("*****************************************")
+    playground.welcome()
 
     random_number = _random.randrange(1, 101)
     game_round = 1
