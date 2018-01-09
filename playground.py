@@ -1,5 +1,4 @@
 """ main of main """
-from __future__ import print_function
 import riddle
 import hangman
 
@@ -10,12 +9,17 @@ def main():
     print("*********** Bem vindo ao salão de jogos! **********", end="\n")
     print("***************************************************", end="\n")
 
-    game_choise = int(input("hangman game(1) riddle game(2): "))
+    print("***** (1) hangman game <---> (2) riddle game *****")
+    game_choise = int(input("escolha o game: "))
 
     if game_choise == 1:
         hangman.run()
     elif game_choise == 2:
         riddle.run()
+
+def play_again():
+    """play again"""
+    main()
 
 if __name__ == '__main__':
     main()

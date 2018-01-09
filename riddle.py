@@ -1,5 +1,4 @@
 """ jogo simplório """
-from __future__ import print_function
 import random as _random
 
 def run():
