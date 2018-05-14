@@ -17,9 +17,6 @@ def run():
     except (IOError) as identifier:
         print('Read error: {}'.format(identifier))
 
-    finally:
-        print('done')
-
     secret_word = external_word_list[_random.randrange(0, len(external_word_list))].upper()
     letter_spacing = ["_" for l in secret_word] #list comprehension
 

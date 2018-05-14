@@ -1,9 +1,9 @@
-""" jogo simplório """
+""" easy game """
 import random as _random
 import playground
 
 def run():
-    """ game start """
+    """ start gane """
 
     playground.welcome()
 
@@ -60,14 +60,11 @@ def run():
         print('você perdeu e suas tentativas acabaram', end='\n')
         restart(int(input("jogar novamente?: sim(1) nao(0): ")))
 
-print("fim de jogo", end='\n')
+    print("fim de jogo", end='\n')
 
-def restart(decision):
-    """ reinicar o jogo """
-    if decision == 1:
-        run()
-    else:
-        print("fim da execução")
+def restart(yes):
+    """ restart game """
+    run() if yes else print("die")
 
 if __name__ == '__main__':
     run()
