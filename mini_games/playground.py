@@ -2,6 +2,7 @@
 import riddle
 import hangman
 
+
 def main():
     """ start select """
 
@@ -17,15 +18,18 @@ def main():
     elif game_choise == 2:
         riddle.run()
 
+
 def play_again():
     """play again"""
     main()
+
 
 def welcome():
     """ zzZZZzzzzZZZzzzzzz """
     print("*****************************************")
     print("*********** Bem vindo ao jogo! **********")
     print("*****************************************")
+
 
 def win_print():
     print("Winner!")
@@ -39,6 +43,7 @@ def win_print():
     print("           ) (          ")
     print("         _.' '._        ")
     print("        '-------'       ")
+
 
 if __name__ == '__main__':
     main()

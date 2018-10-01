@@ -2,6 +2,7 @@
 import random as _random
 import playground
 
+
 def run():
     """ start gane """
 
@@ -15,7 +16,8 @@ def run():
     hard = 3
     attempts = 0
 
-    game_level = int(input("em qual nível quer jogar? facil(1) intermediário(2) difícil(3): "))
+    game_level = int(
+        input("em qual nível quer jogar? facil(1) intermediário(2) difícil(3): "))
 
     if game_level == easy:
         attempts = 20
@@ -33,7 +35,7 @@ def run():
 
         customer_number = int(input("digite um numero entre 0 e 100: "))
 
-        if (customer_number < 1 or  customer_number > 100):
+        if (customer_number < 1 or customer_number > 100):
             print('... {}'.format(customer_number), end='\n')
             continue
 
@@ -42,7 +44,8 @@ def run():
         menor = customer_number < random_number
 
         if find:
-            print("bingo! você acertou!! o número é {}".format(random_number), end='\n')
+            print("bingo! você acertou!! o número é {}".format(
+                random_number), end='\n')
             playground.win_print()
             print("sua pontuação final é: {}".format(points), end='\n')
             restart(int(input("jogar novamente?: sim(1) nao(0): ")))
@@ -62,9 +65,11 @@ def run():
 
     print("fim de jogo", end='\n')
 
+
 def restart(yes):
     """ restart game """
     run() if yes else print("die")
+
 
 if __name__ == '__main__':
     run()

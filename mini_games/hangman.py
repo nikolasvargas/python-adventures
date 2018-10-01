@@ -1,3 +1,5 @@
+# -*- coding: UTF-8 -*-
+
 """ another game """
 import random as _random
 import playground
@@ -18,7 +20,7 @@ def run():
         print('Read error: {}'.format(identifier))
 
     secret_word = external_word_list[_random.randrange(0, len(external_word_list))].upper()
-    letter_spacing = ["_" for l in secret_word] #list comprehension
+    letter_spacing = ["_" for l in secret_word]  # list comprehension
 
     # while len(letter_spacing) < len(secret_word):
     #     letter_spacing.append("_")
@@ -52,7 +54,9 @@ def run():
             die = True
         else:
             handman_die(wrongs)
-            print("você ainda tem {} tentativas".format(attemps - wrongs), end='\n')
+            print(
+                "você ainda tem {} tentativas".format(
+                    attemps - wrongs), end='\n')
             print("letras já inseridas:")
             print(" ".join(tuple(letters_typed)), end='\n')
 
@@ -66,6 +70,7 @@ def run():
             print("quantidade de erros: {}".format(wrongs), end='\n')
         elif die:
             lose_print()
+
 
 def lose_print():
     print("você atingiu o número máximo de erros permitidos", end='\n')
@@ -86,6 +91,7 @@ def lose_print():
     print("   \_             _/       ")
     print("     \_         _/         ")
     print("       \_______/           ")
+
 
 def handman_die(wrongs):
     print("  _______     ")
@@ -136,6 +142,7 @@ def handman_die(wrongs):
     print(" |            ")
     print("_|___         ")
     print()
+
 
 if __name__ == '__main__':
     run()
